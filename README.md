@@ -29,3 +29,19 @@ rm csr.pem
 ```sh
 node app.js
 ```
+
+## HTTP Hijacking
+
+Hijack your DNS. Point traget domains to your node server's IP address.
+
+## HTTPS hijacking
+
+Self-signed SSL certificate is not trusted on client devices so connection won't complete.
+
+To fix that, generate a root certificate or use [SSL proxying](https://docs.proxyman.io/basic-features/ssl-proxying) feature on a [web debugging proxy](https://proxyman.io).
+
+(charles 4.6.2 don't support TLS 1.2, I'm using Proxyman 2.34.1 on my Mac instead.)
+
+## Known Limitations
+
+- If you don't have the original certificate then SSL pining is not supported. ([Can we bypass SSL Pinning?](https://proxyman.io/posts/2019-11-15-Can-we-bypass-ssl-pinning))
